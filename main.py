@@ -109,8 +109,9 @@ doge_found = False
 def check_for_doge_tweet():
     global doge_found
 
-    latest_tweet_text = get_latest_tweet()
+    latest_tweet_text = get_latest_tweet().split("\n")[4]
     print(f"Last tweet text: {latest_tweet_text}")
+
     if "doge" in latest_tweet_text.lower() and not doge_found:
         print("Found a doge Tweet!")
         print(latest_tweet_text)
