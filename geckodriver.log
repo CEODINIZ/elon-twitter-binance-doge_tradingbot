@@ -136,3 +136,77 @@ Exiting due to channel error.
 Exiting due to channel error.
 Exiting due to channel error.
 Exiting due to channel error.
+
+(firefox:595600): Gtk-WARNING **: 16:47:33.761: Locale not supported by C library.
+	Using the fallback 'C' locale.
+
+(/usr/lib/firefox/firefox:595711): Gtk-WARNING **: 16:47:34.552: Locale not supported by C library.
+	Using the fallback 'C' locale.
+
+(/usr/lib/firefox/firefox:595743): Gtk-WARNING **: 16:47:35.619: Locale not supported by C library.
+	Using the fallback 'C' locale.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1619880456210	Marionette	INFO	Listening on port 40403
+1619880456257	Marionette	WARN	TLS certificate errors will be ignored for this session
+
+(/usr/lib/firefox/firefox:595839): Gtk-WARNING **: 16:47:36.891: Locale not supported by C library.
+	Using the fallback 'C' locale.
+
+(/usr/lib/firefox/firefox:595847): Gtk-WARNING **: 16:47:37.227: Locale not supported by C library.
+	Using the fallback 'C' locale.
+1619880469340	Marionette	INFO	Stopped listening on port 40403
+
+(firefox:596905): Gtk-WARNING **: 16:49:53.184: Locale not supported by C library.
+	Using the fallback 'C' locale.
+
+(/usr/lib/firefox/firefox:597011): Gtk-WARNING **: 16:49:53.963: Locale not supported by C library.
+	Using the fallback 'C' locale.
+
+(/usr/lib/firefox/firefox:597038): Gtk-WARNING **: 16:49:55.030: Locale not supported by C library.
+	Using the fallback 'C' locale.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1619880595608	Marionette	INFO	Listening on port 39503
+1619880595686	Marionette	WARN	TLS certificate errors will be ignored for this session
+
+(/usr/lib/firefox/firefox:597150): Gtk-WARNING **: 16:49:56.278: Locale not supported by C library.
+	Using the fallback 'C' locale.
+
+(firefox:597268): Gtk-WARNING **: 16:50:02.522: Locale not supported by C library.
+	Using the fallback 'C' locale.
+
+(/usr/lib/firefox/firefox:597374): Gtk-WARNING **: 16:50:03.327: Locale not supported by C library.
+	Using the fallback 'C' locale.
+1619880604187	Marionette	INFO	Stopped listening on port 39503
+
+(/usr/lib/firefox/firefox:597405): Gtk-WARNING **: 16:50:04.475: Locale not supported by C library.
+	Using the fallback 'C' locale.
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1619880605050	Marionette	INFO	Listening on port 33251
+1619880605131	Marionette	WARN	TLS certificate errors will be ignored for this session
+
+(/usr/lib/firefox/firefox:597494): Gtk-WARNING **: 16:50:05.830: Locale not supported by C library.
+	Using the fallback 'C' locale.
+
+(/usr/lib/firefox/firefox:597501): Gtk-WARNING **: 16:50:06.162: Locale not supported by C library.
+	Using the fallback 'C' locale.
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+1619880610569	Marionette	INFO	Stopped listening on port 33251

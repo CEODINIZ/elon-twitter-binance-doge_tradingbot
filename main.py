@@ -9,8 +9,13 @@ from binance.exceptions import BinanceAPIException, BinanceOrderException
 
 from decimal import Decimal as D
 
-import schedule, time, math
+import schedule, time, math, os
 
+import logging
+logging.basicConfig(
+    format='%(asctime)s %(levelname)-8s %(message)s',
+    level=logging.INFO,
+    datefmt='%Y-%m-%d %H:%M:%S')
 
 TWITTER_URL = 'https://twitter.com/elonmusk/'
 
@@ -18,7 +23,10 @@ driver = webdriver.Firefox()
 
 headers = {"User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:83.0) Gecko/20100101 Firefox/83.0"}
 
-binance_client = Client("api-key", "api-secret")
+API_KEY = os.getenv('API_KEY')
+API_SECRET = os.environ.get('API_SECRET')
+
+binance_client = Client(API_KEY, API_SECRET)
 
 BUY_WITH = "USDT"
 
@@ -110,7 +118,7 @@ def check_for_doge_tweet():
     global doge_found
 
     latest_tweet_text = get_latest_tweet().split("\n")[4]
-    print(f"Last tweet text: {latest_tweet_text}")
+    logging.info(f"Last tweet text: {latest_tweet_text}")
 
     if "doge" in latest_tweet_text.lower() and not doge_found:
         print("Found a doge Tweet!")

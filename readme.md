@@ -8,6 +8,7 @@
  See main.py for max spending amount and the coin to spend.
  
  Start with
- `python3.9 main.py`
+ `API_KEY=your_binance_api_key API_SECRET=your_binance_api_secret python3.9 main.py`
+ 
  optionally headless on a server:
- `MOZ_HEADLESS=1 python3.9 main.py`
+ `MOZ_HEADLESS=1 API_KEY=your_binance_api_key API_SECRET=your_binance_api_secret python3.9 main.py`
