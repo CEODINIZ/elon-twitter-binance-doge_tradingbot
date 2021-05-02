@@ -3,6 +3,7 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.common.exceptions import TimeoutException
 
 from binance.client import Client
 from binance.exceptions import BinanceAPIException, BinanceOrderException
@@ -106,11 +107,12 @@ def get_latest_tweet():
         element = WebDriverWait(driver, 10).until(
             EC.presence_of_element_located((By.XPATH, first_tweet_xpath))
         )
-    finally:
+    except TimeoutException as e:
         # tweets are not visible in some rare cases, return empty string instead
-        if not element:
-            return ""
+        return ""
+    finally:
         return element.text
+    
 
 doge_found = False
 
