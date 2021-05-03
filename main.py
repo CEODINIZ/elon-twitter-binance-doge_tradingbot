@@ -122,7 +122,7 @@ doge_found = False
 def check_for_doge_tweet():
     global doge_found
 
-    latest_tweet_text = get_latest_tweet().split("\n")[4]
+    latest_tweet_text = "".join(get_latest_tweet().split("\n")[4:-3])
     logging.info(f"Last tweet text: {latest_tweet_text}")
 
     if "doge" in latest_tweet_text.lower() and not doge_found:
