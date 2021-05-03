@@ -111,7 +111,10 @@ def get_latest_tweet():
         # tweets are not visible in some rare cases, return empty string instead
         return ""
     finally:
-        return element.text
+        if element:
+            return element.text
+        
+    return ""
     
 
 doge_found = False
