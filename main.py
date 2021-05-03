@@ -101,7 +101,7 @@ def buy_coins():
 
 def get_latest_tweet():
     driver.get(TWITTER_URL)
-
+    element = None
     try:
         first_tweet_xpath = '//*[@data-testid="tweet"]'
         element = WebDriverWait(driver, 10).until(
@@ -111,7 +111,7 @@ def get_latest_tweet():
         # tweets are not visible in some rare cases, return empty string instead
         return ""
     finally:
-        if element:
+        if element is not None:
             return element.text
         
     return ""
