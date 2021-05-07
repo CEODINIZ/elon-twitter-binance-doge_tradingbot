@@ -104,7 +104,7 @@ def get_latest_tweet():
     element = None
     try:
         first_tweet_xpath = '//*[@data-testid="tweet"]'
-        element = WebDriverWait(driver, 10).until(
+        element = WebDriverWait(driver, 15).until(
             EC.presence_of_element_located((By.XPATH, first_tweet_xpath))
         )
     except TimeoutException as e:
@@ -135,7 +135,7 @@ def check_for_doge_tweet():
 
 check_balance()
 check_for_doge_tweet()
-schedule.every(10).seconds.do(check_for_doge_tweet)
+schedule.every(20).seconds.do(check_for_doge_tweet)
 
 while True:
     schedule.run_pending()
