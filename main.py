@@ -118,16 +118,17 @@ def get_latest_tweet():
         latest_tweet = None
         latest_tweet_timestamp = None
         
-        for tweet in elements:
-            time = tweet.find_element_by_xpath(".//time")
-            timestamp = time.get_attribute("datetime")
-            
-            date = datetime.datetime.strptime(timestamp, '%Y-%m-%dT%H:%M:%S.000Z')
-            if latest_tweet_timestamp is None or date > latest_tweet_timestamp:
-                latest_tweet_timestamp = date;
-                latest_tweet = tweet
-        latest_tweet_text_formatted = "".join(latest_tweet.text.split("\n")[4:-3])
-        return {"text": latest_tweet_text_formatted, "date": latest_tweet_timestamp}
+        if elements is not None:
+            for tweet in elements:
+                time = tweet.find_element_by_xpath(".//time")
+                timestamp = time.get_attribute("datetime")
+                
+                date = datetime.datetime.strptime(timestamp, '%Y-%m-%dT%H:%M:%S.000Z')
+                if latest_tweet_timestamp is None or date > latest_tweet_timestamp:
+                    latest_tweet_timestamp = date;
+                    latest_tweet = tweet
+            latest_tweet_text_formatted = "".join(latest_tweet.text.split("\n")[4:-3])
+            return {"text": latest_tweet_text_formatted, "date": latest_tweet_timestamp}
         
     return None
     
@@ -139,7 +140,7 @@ def check_for_doge_tweet():
     
     last_tweet = get_latest_tweet()
     
-    if last_tweet["date"] > datetime.datetime.now() - datetime.timedelta(minutes=4):
+    if last_tweet is not None and last_tweet["date"] > datetime.datetime.now() - datetime.timedelta(minutes=4):
         logging.info(f"Found new tweet, text: {last_tweet['text']}")
 
         if "doge" in last_tweet["text"].lower() and not doge_found:
@@ -154,6 +155,7 @@ def check_for_doge_tweet():
 
 def alive_check():
     last_tweet = get_latest_tweet()
+
     logging.info(f"Still running, last tweet: {last_tweet['text']} \nTweet date: {last_tweet['date']}")
 
 check_balance()
